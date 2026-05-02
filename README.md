@@ -1,6 +1,12 @@
 # WineArch
 winoe's configurations for archlinux(niri desktop)
 
+## Installation
+```bash
+git clone https://github.com/w1noe/WineArch.git ~/.config
+```
+Then, open waypaper and set ~/.config/wallpapers folder as the search folder.
+
 ## Required softwares
 
 ### a. For this repository:
