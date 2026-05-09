@@ -276,6 +276,15 @@ layout {
     }
 }
 
+workspace "1"
+workspace "2"
+
+window-rule {
+    match at-startup=true app-id="kitty"
+    open-on-workspace "2"
+}
+
+
 // Add lines like this to spawn processes at startup.
 // Note that running niri as a session supports xdg-desktop-autostart,
 // which may be more convenient to use.
@@ -289,6 +298,7 @@ spawn-at-startup "mako"
 spawn-at-startup "fcitx5"
 spawn-at-startup "~/.config/niri/scripts/swayidle.sh"
 
+spawn-sh-at-startup "sleep 0.5 && kitty -e btop && sleep 0.3 && niri msg action focus-workspace 1"
 // To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
 // spawn-sh-at-startup "qs -c ~/source/qs/MyAwesomeShell"
 

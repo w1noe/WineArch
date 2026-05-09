@@ -1,0 +1,11 @@
+shell /usr/bin/fish
+
+background_opacity 0.85
+dynamic_background_opacity yes
+
+inactive_opacity 0.7
+#background_blur 8
+font_family Iosevka
+italic_font Iosevka Italic
+font_size 14
+

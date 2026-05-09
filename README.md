@@ -1,38 +1,18 @@
-# WineArch
-winoe's configurations for archlinux(niri desktop)
+# WineConfig
+winoe's configurations for niri desktop
 
 ## Installation
 ```bash
-git clone https://github.com/w1noe/WineArch.git ~/.config
+# Backup the folders
+mv ~/.config/niri{,.bak} && mv ~/.config/kitty{,.bak} && mv ~/.config/waybar{,.bak} && mv ~/.config/wallpapers{,.bak}
+
+# Clone the repository
+git clone https://github.com/w1noe/WineConfig.git
 ```
 Then, open waypaper and set ~/.config/wallpapers folder as the search folder.
 
 ## Required softwares
 
-### a. For this repository:
-
-#### *archlinux cn source is required.* 
-
-1. Edit /etc/pacman.conf 
-2. Update archlinux-cn-keying :
-
-```bash
-sudo pacman -S archlinux-cn-keyring
-```
-
-kitty:
-```bash 
-sudo pacman -S kitty
-```
-
-waybar:
-```bash
-sudo pacman -S waybar
-```
-
-### b. For the arch evironment
-
-fcitx5:
-```bash
-sudo pacman -S fcitx5-im fcitx5-rime rime-ice-pinyin-git fcitx5-chinese-addons 
-```
+1. waybar
+2. kitty
+3. awww & waypaper
