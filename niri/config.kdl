@@ -82,7 +82,7 @@ input {
 // Find more information on the wiki:
 // https://yalter.github.io/niri/Configuration:-Outputs
 // Remember to uncomment the node by removing "/-"!
-output "LVDS-2" {
+/-output "LVDS-2" {
 	mode "1366x768@60.004"
         scale 1
 	position x=0 y=0
@@ -275,15 +275,7 @@ layout {
         // bottom 64
     }
 }
-
-workspace "1"
 workspace "2"
-
-window-rule {
-    match at-startup=true app-id="kitty"
-    open-on-workspace "2"
-}
-
 
 // Add lines like this to spawn processes at startup.
 // Note that running niri as a session supports xdg-desktop-autostart,
@@ -297,8 +289,9 @@ spawn-at-startup "/usr/lib/polkit-gnome/polkit-gnome-autentication-agent-1"
 spawn-at-startup "mako"
 spawn-at-startup "fcitx5"
 spawn-at-startup "~/.config/niri/scripts/swayidle.sh"
-
-spawn-sh-at-startup "sleep 0.5 && kitty -e btop && sleep 0.3 && niri msg action focus-workspace 1"
+spawn-at-startup "kitty" "-e" "--start-as=fullscreen" "btop"
+spawn-at-startup "xwayland-satellite"
+spawn-sh-at-startup "export DISPLAY=:0"
 // To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
 // spawn-sh-at-startup "qs -c ~/source/qs/MyAwesomeShell"
 
